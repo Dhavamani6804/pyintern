@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Activated Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice-Activated Assistant</h1>
+        <form method="POST" action="/">
+            <input type="text" name="command" placeholder="Enter your command (e.g., weather, news, reminder)" required>
+            <input type="text" name="city" placeholder="Enter city (for weather commands)">
+            <input type="text" name="reminder_text" placeholder="Enter reminder text (for reminder commands)">
+            <button type="submit">Execute</button>
+        </form>
+        {% if result %}
+        <div class="result">
+            <h2>Assistant Response</h2>
+            <p>{{ result.response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
